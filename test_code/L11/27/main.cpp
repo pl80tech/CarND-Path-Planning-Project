@@ -3,7 +3,7 @@
 #include <cmath>
 #include <vector>
 
-#include "Dense"
+#include "../../../src/Eigen-3.3/Eigen/Dense"
 
 using namespace std;
 using Eigen::MatrixXd;
