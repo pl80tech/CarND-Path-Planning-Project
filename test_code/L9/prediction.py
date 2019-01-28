@@ -2,6 +2,7 @@
 
 from classifier import GNB
 import json
+from prediction_solution import *
 
 def main():
 	gnb = GNB()
