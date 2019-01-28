@@ -19,6 +19,7 @@ public:
 	struct maze_s {
 	
 		int g;	// iteration
+		int f;
 		double x;
 		double y;
 		double theta;
@@ -44,11 +45,15 @@ public:
  	virtual ~HBF();
 
  	
+ 	static bool compare_maze_s(const HBF::maze_s & lhs, const HBF::maze_s & rhs);
+    
+    double heuristic(double x, double y, vector<int> goal);
+     	
  	int theta_to_stack_number(double theta);
 
   	int idx(double float_num);
 
-  	vector<maze_s> expand(maze_s state);
+  	vector<maze_s> expand(maze_s state, vector<int> goal);
 
   	maze_path search(vector< vector<int> > grid, vector<double> start, vector<int> goal);
 
