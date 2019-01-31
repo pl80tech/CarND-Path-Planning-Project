@@ -11,6 +11,10 @@
 
 using namespace std;
 
+// Flags to enable test codes. Comment out to disable.
+//#define TEST1
+//#define TEST2
+
 // for convenience
 using json = nlohmann::json;
 
@@ -243,7 +247,7 @@ int main() {
           	vector<double> next_y_vals;
 
           	// TODO: define a path made up of (x,y) points that the car will visit sequentially every .02 seconds
-          	#if 0
+            #ifdef TEST1
             double dist_inc = 0.5;
             for(int i = 0; i < 50; i++)
             {
@@ -252,6 +256,7 @@ int main() {
             }
             #endif
 
+            #ifdef TEST2
             double pos_x;
             double pos_y;
             double angle;
@@ -287,7 +292,8 @@ int main() {
               pos_x += (dist_inc)*cos(angle+(i+1)*(pi()/100));
               pos_y += (dist_inc)*sin(angle+(i+1)*(pi()/100));
             }
-                        
+            #endif
+
             msgJson["next_x"] = next_x_vals;
           	msgJson["next_y"] = next_y_vals;
 
