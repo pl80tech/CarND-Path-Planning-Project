@@ -247,6 +247,7 @@ int main() {
           	vector<double> next_y_vals;
 
           	// TODO: define a path made up of (x,y) points that the car will visit sequentially every .02 seconds
+          	// Test 1 - Getting started with simple test moving the car forward at constant velocity
             #ifdef TEST1
             double dist_inc = 0.5;
             for(int i = 0; i < 50; i++)
@@ -256,6 +257,7 @@ int main() {
             }
             #endif
 
+            // Test 2 - More complex path - driving the car in a circular path
             #ifdef TEST2
             double pos_x;
             double pos_y;
