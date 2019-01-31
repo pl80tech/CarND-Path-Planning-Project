@@ -11,6 +11,9 @@
 
 using namespace std;
 
+// Flag to enable debug messages. Comment out to disable.
+#define DEBUG
+
 // Flags to enable test codes. Comment out to disable.
 //#define TEST1
 //#define TEST2
