@@ -110,26 +110,26 @@ def run_grader(student_func):
             comment = "search did not return a list of three integers or the string 'fail'"
         elif result % 100 == 3:
             if result == 3:
-                comment = f"search did not return anything for grid: {grid_1}"
+                comment = "search did not return anything for grid: {}".format(grid_1)
             else:
-                comment = f"search raised an exception for grid: {grid_1}"
+                comment = "search raised an exception for grid: {}".format(grid_1)
         elif result % 100 == 4:
             if result == 4:
-                comment = f"search didn't return the expected output for grid: {grid_2}"
+                comment = "search didn't return the expected output for grid: {}".format(grid_2)
             else:
-                comment = f"search raised an exception for grid: {grid_2}"
+                comment = "search raised an exception for grid: {}".format(grid_2)
        
         elif result % 100 == 5:
             if result == 5:
-                comment = f"search didn't return the expected output for grid: {grid_3}"
+                comment = "search didn't return the expected output for grid: {}".format(grid_3)
             else:
-                comment = f"search raised an exception for grid: {grid_3}"
+                comment = "search raised an exception for grid: {}".format(grid_3)
       
         elif result % 100 == 6:
             if result == 6:
-                comment = f"search didn't return the expected output for grid: {grid_4}"
+                comment = "search didn't return the expected output for grid: {}".format(grid_4)
             else:
-                comment = f"search raised an exception for grid: {grid_4}"
+                comment = "search raised an exception for grid: {}".format(grid_4)
             
         grade_result['correct'] = (result == 0)
         if grade_result['correct']:
