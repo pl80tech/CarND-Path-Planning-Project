@@ -104,6 +104,7 @@ def tests(student_func):
         return 2 #You didn't define a function called search
     
     try:
+        print("Test with grid #1")
         grid = [[0, 1],
                 [0, 0]]
         init = [0,0]
@@ -117,6 +118,7 @@ def tests(student_func):
         return 103 # problem
     
     try:
+        print("Test with grid #2")
         grid = [[0, 1, 1, 1, 1],
                 [0, 1, 0, 0, 0],
                 [0, 0, 0, 1, 0],
@@ -135,6 +137,7 @@ def tests(student_func):
         return 104
     
     try:
+        print("Test with grid #3")
         grid = [[0, 1, 0, 0, 0, 1, 0],
                 [0, 1, 0, 1, 0, 1, 0],
                 [0, 1, 0, 1, 0, 1, 0],
@@ -152,6 +155,7 @@ def tests(student_func):
         return 105
 
     try:
+        print("Test with grid #4")
         grid = [[0, 0, 1, 0, 0, 0],
                 [0, 0, 0, 0, 0, 0],
                 [0, 0, 1, 0, 1, 0],
