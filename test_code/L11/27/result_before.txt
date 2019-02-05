@@ -1,0 +1,5 @@
+$ ../../runtest.sh main.cpp
+at least one of your terms differed from target by more than 0.01
+at least one of your terms differed from target by more than 0.01
+at least one of your terms differed from target by more than 0.01
+Try again!
