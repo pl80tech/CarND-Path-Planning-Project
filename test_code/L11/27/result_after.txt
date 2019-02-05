@@ -1,0 +1,2 @@
+$ ../../runtest.sh main.cpp
+Nice work!
