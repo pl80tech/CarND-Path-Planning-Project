@@ -1,0 +1,11 @@
+$ python evaluate_ptg.py
+cost for time_diff_cost is 	 0.14888503362331806
+cost for s_diff_cost is 	 0.6863979620239848
+cost for d_diff_cost is 	 0.6650112391985075
+cost for efficiency_cost is 	 -0.11647788350173993
+cost for max_jerk_cost is 	 0
+cost for total_jerk_cost is 	 0.09108947977127801
+cost for collision_cost is 	 0.0
+cost for buffer_cost is 	 0.16985904229336835
+cost for max_accel_cost is 	 0
+cost for total_accel_cost is 	 0.21658352963029182
