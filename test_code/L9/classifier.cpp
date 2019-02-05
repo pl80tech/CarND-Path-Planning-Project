@@ -105,8 +105,8 @@ void GNB::train(vector<vector<double>> data, vector<string> labels)
 	#ifdef DEBUG
 	cout << "--------------------------" << endl;
 	cout << "left_means = " << left_means << endl;
-	cout << "keep_means = " << left_means << endl;
-	cout << "right_means = " << left_means << endl;
+	cout << "keep_means = " << keep_means << endl;
+	cout << "right_means = " << right_means << endl;
 	cout << "--------------------------" << endl;
 	#endif
 	
