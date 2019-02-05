@@ -67,20 +67,32 @@ void GNB::train(vector<vector<double>> data, vector<string> labels)
 	float left_size = 0;
 	float keep_size = 0;
 	float right_size = 0;
-	
+
+	#ifdef DEBUG
+	cout << "--------------------------" << endl;
+	#endif	
     //For each label, compute the numerators of the means for each class
     //and the total number of data points given with that label.
 	for (int i=0; i<labels.size(); i++){
 	    if (labels[i] == "left"){
 	        left_means += ArrayXd::Map(data[i].data(), data[i].size()); //conversion of data[i] to ArrayXd
 	        left_size += 1;
+	    	#ifdef DEBUG
+	    	cout << "left data #" << i << ": " << data[i][0] << ", " << data[i][1] << ", " << data[i][2] << ", " << data[i][3] << endl;
+	    	#endif
 	    } 
 	    else if (labels[i] == "keep") {
 	        keep_means += ArrayXd::Map(data[i].data(), data[i].size());
 	        keep_size += 1;
+	    	#ifdef DEBUG
+	    	cout << "keep data #" << i << ": " << data[i][0] << ", " << data[i][1] << ", " << data[i][2] << ", " << data[i][3] << endl;
+	    	#endif
 	    } else if (labels[i] == "right") {
 	        right_means += ArrayXd::Map(data[i].data(), data[i].size());
 	        right_size += 1;
+	    	#ifdef DEBUG
+	    	cout << "right data #" << i << ": " << data[i][0] << ", " << data[i][1] << ", " << data[i][2] << ", " << data[i][3] << endl;
+	    	#endif
 	    }
 	}
 
@@ -90,6 +102,13 @@ void GNB::train(vector<vector<double>> data, vector<string> labels)
     keep_means = keep_means/keep_size;
 	right_means = right_means/right_size;
 
+	#ifdef DEBUG
+	cout << "--------------------------" << endl;
+	cout << "left_means = " << left_means << endl;
+	cout << "keep_means = " << left_means << endl;
+	cout << "right_means = " << left_means << endl;
+	cout << "--------------------------" << endl;
+	#endif
 	
 	//Begin computation of standard deviations for each class/label combination.
 	ArrayXd data_point;
