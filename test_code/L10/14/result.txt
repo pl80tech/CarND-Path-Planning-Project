@@ -1,0 +1,10 @@
+$ ../../runtest.sh main.cpp cost.cpp
+Costs for (intended_lane, final_lane, goal_distance):
+----------------------------------------------------------
+The cost is 0.981684 for (2, 2, 1.0)
+The cost is 0.32968 for (2, 2, 10.0)
+The cost is 0.0392106 for (2, 2, 100.0)
+The cost is 0.0295545 for (1, 2, 100.0)
+The cost is 0.0198013 for (1, 1, 100.0)
+The cost is 0.00995016 for (0, 1, 100.0)
+The cost is 0 for (0, 0, 100.0)
