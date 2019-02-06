@@ -10,6 +10,7 @@ This is my writeup for the project "Path Planning" of Self Driving Car Nanadegre
 
 * [About Path Planning Project](#About-Path-Planning-Project)
 * [Project code](#Project-code)
+* [Output video](#Output-video)
 
 ---
 ## About Path Planning Project
@@ -29,3 +30,6 @@ https://github.com/pl80tech/CarND-Path-Planning-Project.git
 It is imported and frequently updated (cherry-pick or merge) from below original repository:
 
 https://github.com/udacity/CarND-Path-Planning-Project.git
+
+---
+## Output video
