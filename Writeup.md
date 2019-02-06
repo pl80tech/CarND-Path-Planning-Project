@@ -16,7 +16,8 @@ This is my writeup for the project "Path Planning" of Self Driving Car Nanadegre
 
 The goals / steps of this project are the following:
 
-* To be added
+* The goal of this project is to build a path planner that creates smooth, safe trajectories for the car to follow. The highway track has other vehicles, all going different speeds, but approximately obeying the 50 MPH speed limit. The car transmits its location, along with its sensor fusion data, which estimates the location of all the vehicles on the same side of the road.
+* More detail explanation can be found in [README](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/README.md)
 
 ---
 ## Project code
