@@ -12,6 +12,11 @@ This is my writeup for the project "Path Planning" of Self Driving Car Nanadegre
 * [Project code](#Project-code)
 * [Output video](#Output-video)
 
+[//]: # (Image References)
+
+[animation1]: ./output/test1.gif "Animated gif of simulation video (test1)"
+[animation2]: ./output/test2.gif "Animated gif of simulation video (test2)"
+
 ---
 ## About Path Planning Project
 
