@@ -41,7 +41,7 @@ https://github.com/udacity/CarND-Path-Planning-Project.git
 ---
 ## Rubric Points
 
-Here are the [Rubric Points](https://review.udacity.com/#!/rubrics/1971/view) which are required to pass the project.
+Here are the [Rubric Points](https://review.udacity.com/#!/rubrics/1971/view) which need to be addressed to meet the requirements of this project.
 
 ---
 ## Output video
