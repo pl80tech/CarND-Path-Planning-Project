@@ -8,6 +8,7 @@
 #include "Eigen-3.3/Eigen/Core"
 #include "Eigen-3.3/Eigen/QR"
 #include "json.hpp"
+#include "spline.h"
 
 using namespace std;
 
@@ -311,7 +312,7 @@ int main() {
               next_y_vals.push_back(xy[1]);
             }
             #endif
-            
+
             msgJson["next_x"] = next_x_vals;
           	msgJson["next_y"] = next_y_vals;
 
