@@ -12,6 +12,7 @@ This is my writeup for the project "Path Planning" of Self Driving Car Nanadegre
 * [Project code](#Project-code)
 * [Rubric Points](#Rubric-Points)
 * [Output video](#Output-video)
+* [Reference](#Reference)
 
 [//]: # (Image References)
 
@@ -44,3 +45,8 @@ Here are the [Rubric Points](https://review.udacity.com/#!/rubrics/1971/view) wh
 
 ---
 ## Output video
+
+---
+## Reference
+
+[1] [Cubic Spline interpolation in C++](https://kluge.in-chemnitz.de/opensource/spline/)
