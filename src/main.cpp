@@ -300,6 +300,7 @@ int main() {
             }
             #endif
 
+            // Test 3 - Driving the car in a same line along the highway
             #ifdef TEST3
             double dist_inc = 0.5;
             for(int i = 0; i < 50; i++)
