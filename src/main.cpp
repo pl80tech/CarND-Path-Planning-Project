@@ -320,6 +320,7 @@ int main() {
             }
             #endif
 
+            // Test 4 - Driving the car in a same line with smoother trajectory (using spline)
             #ifdef TEST4
             // Get the size of previous path
             int prev_size = previous_path_x.size();
@@ -418,7 +419,7 @@ int main() {
                 
               double x_ref = x_point;
               double y_ref = y_point;
-                
+
               // Rotate back to normal after rotating it earlier
               x_point = x_ref*cos(ref_yaw) - y_ref*sin(ref_yaw);
               y_point = x_ref*sin(ref_yaw) + y_ref*cos(ref_yaw);
