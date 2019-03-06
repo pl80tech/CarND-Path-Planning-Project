@@ -46,6 +46,12 @@ Here are the [Rubric Points](https://review.udacity.com/#!/rubrics/1971/view) wh
 ---
 ## Output video
 
+Here are the simulation test videos which were uploaded on Youtube (for easy reference). Click on the thumbnail image to jump to the video on Youtube.
+
+| Filename | Content | Compile flag | Link on Youtube |
+|:--------:|:-------:|:------------:|:---------------:|
+| [test1.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test1.mp4) | Moving straight at constant velocity | -DTEST1 |[![alt text][animation1]](https://www.youtube.com/watch?v=_qdQqQSLnUI)|
+
 ---
 ## Reference
 
