@@ -321,9 +321,37 @@ int main() {
             #endif
 
             // Test 4 - Driving the car in a same line with smoother trajectory (using spline)
-            #ifdef TEST4
+            // Test 5 - Slowing down the speed when moving close to another car
+            #if defined TEST4 || defined TEST5
             // Get the size of previous path
             int prev_size = previous_path_x.size();
+
+            #ifdef TEST5
+            if (prev_size > 0) {
+              car_s = end_path_s;
+            }
+
+            // Find reference velocity to use
+            for (int i = 0; i < sensor_fusion.size(); i++) {
+              // Checking only the cars in the current lane
+              float d = sensor_fusion[i][6];
+
+              if ((d < 2+4*lane+2) && (d < 2+4*lane-2)) {
+                double vx = sensor_fusion[i][3];
+                double vy = sensor_fusion[i][4];
+                double check_speed = sqrt(vx*vx + vy*vy);
+                double check_car_s = sensor_fusion[i][5];
+
+                // Project out s value using previous points
+                check_car_s += ((double)prev_size*.02*check_speed);
+                // Check whether the s value is in attention range (within 30m)
+                if ((check_car_s > car_s) && (check_car_s-car_s < 30)) {
+                  // Adjust reference velocity to avoid collision
+                  ref_vel = 29.5; // mph
+                }
+              }
+            }
+            #endif // TEST5
             
             // Create a list of widely spaced (x,y) waypoints, evenly spaced at 30m
             // Will interpolate these waypoints later with a spline and fill it in with more points that control spline
