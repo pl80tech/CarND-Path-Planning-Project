@@ -213,7 +213,7 @@ int main() {
 
   // Reference velocity (mph)
   #if defined TEST6 || defined TEST7
-    double ref_vel = 20.0;
+    double ref_vel = 0.0;
   #else
     double ref_vel = 49.5;
   #endif
