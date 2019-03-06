@@ -18,6 +18,7 @@ This is my writeup for the project "Path Planning" of Self Driving Car Nanadegre
 
 [animation1]: ./output/test1.gif "Animated gif of simulation video (test1)"
 [animation2]: ./output/test2.gif "Animated gif of simulation video (test2)"
+[animation3]: ./output/test3.gif "Animated gif of simulation video (test3)"
 
 ---
 ## About Path Planning Project
@@ -52,6 +53,7 @@ Here are the simulation test videos which were uploaded on Youtube (for easy ref
 |:--------:|:-------:|:------------:|:---------------:|
 | [test1.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test1.mp4) | Moving straight at constant velocity | -DTEST1 |[![alt text][animation1]](https://www.youtube.com/watch?v=_qdQqQSLnUI)|
 | [test2.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test2.mp4) | Moving in a circle | -DTEST2 |[![alt text][animation2]](https://www.youtube.com/watch?v=qh-NQ2_cI1c)|
+| [test3.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test3.mp4) | Moving in a same line | -DTEST3 |[![alt text][animation3]](https://www.youtube.com/watch?v=zmK4KvYfrow)|
 
 ---
 ## Reference
