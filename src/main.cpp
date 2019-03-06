@@ -354,6 +354,7 @@ int main() {
                 check_car_s += ((double)prev_size*.02*check_speed);
                 // Check whether the s value is in attention range (within 30m)
                 if ((check_car_s > car_s) && (check_car_s-car_s < 30)) {
+                  cout << "There is a car very close. Pay attention !!!" << '\n';
                   #ifdef TEST5
                   // Adjust reference velocity to avoid collision
                   ref_vel = 29.5; // mph
@@ -364,6 +365,7 @@ int main() {
                   too_close = true;
                   #ifdef TEST7
                   if (lane > 0) {
+                    cout << "Change to left lane !!!" << '\n';
                     lane = 0;
                   }
                   #endif // TEST7
@@ -374,8 +376,10 @@ int main() {
 
             #if defined TEST6 || defined TEST7
             if (too_close) {
+              cout << "Slow down !!!" << '\n';
               ref_vel -= 0.224;
             } else if (ref_vel < 49.5) {
+              cout << "Speed up !!!" << '\n';
               ref_vel += 0.224;
             }
             #endif // TEST6 or TEST 7
