@@ -344,7 +344,7 @@ int main() {
               // Checking only the cars in the current lane
               float d = sensor_fusion[i][6];
 
-              if ((d < 2+4*lane+2) && (d < 2+4*lane-2)) {
+              if ((d < 2+4*lane+2) && (d > 2+4*lane-2)) {
                 double vx = sensor_fusion[i][3];
                 double vy = sensor_fusion[i][4];
                 double check_speed = sqrt(vx*vx + vy*vy);
