@@ -212,7 +212,11 @@ int main() {
   int lane = 1;
 
   // Reference velocity (mph)
-  double ref_vel = 49.5;
+  #ifdef TEST6
+    double ref_vel = 0.0;
+  #else
+    double ref_vel = 49.5;
+  #endif
 
   h.onMessage([&ref_vel,&map_waypoints_x,&map_waypoints_y,&map_waypoints_s,&map_waypoints_dx,&map_waypoints_dy,&lane](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length,
                      uWS::OpCode opCode) {
@@ -322,14 +326,16 @@ int main() {
 
             // Test 4 - Driving the car in a same line with smoother trajectory (using spline)
             // Test 5 - Slowing down the speed when moving close to another car
-            #if defined TEST4 || defined TEST5
+            #if defined TEST4 || defined TEST5 || defined TEST6
             // Get the size of previous path
             int prev_size = previous_path_x.size();
 
-            #ifdef TEST5
+            #if defined TEST5 || defined TEST6
             if (prev_size > 0) {
               car_s = end_path_s;
             }
+
+            bool too_close = false;
 
             // Find reference velocity to use
             for (int i = 0; i < sensor_fusion.size(); i++) {
@@ -346,12 +352,27 @@ int main() {
                 check_car_s += ((double)prev_size*.02*check_speed);
                 // Check whether the s value is in attention range (within 30m)
                 if ((check_car_s > car_s) && (check_car_s-car_s < 30)) {
+                  #ifdef TEST5
                   // Adjust reference velocity to avoid collision
                   ref_vel = 29.5; // mph
+                  #endif // TEST5
+
+                  #ifdef TEST6
+                  // Set the flag for further processing
+                  too_close = true;
+                  #endif // TEST6
                 }
               }
             }
-            #endif // TEST5
+
+            #ifdef TEST6
+            if (too_close) {
+              ref_vel -= 0.224;
+            } else if (ref_vel < 49.5) {
+              ref_vel += 0.224;
+            }
+            #endif // TEST6
+            #endif // TEST5 or TEST6
             
             // Create a list of widely spaced (x,y) waypoints, evenly spaced at 30m
             // Will interpolate these waypoints later with a spline and fill it in with more points that control spline
@@ -458,7 +479,7 @@ int main() {
               next_x_vals.push_back(x_point);
               next_y_vals.push_back(y_point);
             }
-            #endif // TEST4
+            #endif // TEST4 or TEST5 or TEST6
 
             msgJson["next_x"] = next_x_vals;
           	msgJson["next_y"] = next_y_vals;
