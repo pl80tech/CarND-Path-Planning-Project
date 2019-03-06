@@ -326,6 +326,8 @@ int main() {
 
             // Test 4 - Driving the car in a same line with smoother trajectory (using spline)
             // Test 5 - Slowing down the speed when moving close to another car
+            // Test 6 - Speed up and slow down gradually
+            // Test 7 - Change to left lane when detecting a car moving closely ahead
             #if defined TEST4 || defined TEST5 || defined TEST6 || defined TEST7
             // Get the size of previous path
             int prev_size = previous_path_x.size();
