@@ -51,6 +51,7 @@ Here are the simulation test videos which were uploaded on Youtube (for easy ref
 | Filename | Content | Compile flag | Link on Youtube |
 |:--------:|:-------:|:------------:|:---------------:|
 | [test1.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test1.mp4) | Moving straight at constant velocity | -DTEST1 |[![alt text][animation1]](https://www.youtube.com/watch?v=_qdQqQSLnUI)|
+| [test2.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test2.mp4) | Moving in a circle | -DTEST2 |[![alt text][animation2]](https://www.youtube.com/watch?v=qh-NQ2_cI1c)|
 
 ---
 ## Reference
