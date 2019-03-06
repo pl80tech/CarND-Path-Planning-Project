@@ -212,8 +212,8 @@ int main() {
   int lane = 1;
 
   // Reference velocity (mph)
-  #ifdef TEST6
-    double ref_vel = 0.0;
+  #if defined TEST6 || defined TEST7
+    double ref_vel = 20.0;
   #else
     double ref_vel = 49.5;
   #endif
@@ -326,11 +326,11 @@ int main() {
 
             // Test 4 - Driving the car in a same line with smoother trajectory (using spline)
             // Test 5 - Slowing down the speed when moving close to another car
-            #if defined TEST4 || defined TEST5 || defined TEST6
+            #if defined TEST4 || defined TEST5 || defined TEST6 || defined TEST7
             // Get the size of previous path
             int prev_size = previous_path_x.size();
 
-            #if defined TEST5 || defined TEST6
+            #if defined TEST5 || defined TEST6 || defined TEST7
             if (prev_size > 0) {
               car_s = end_path_s;
             }
@@ -357,22 +357,27 @@ int main() {
                   ref_vel = 29.5; // mph
                   #endif // TEST5
 
-                  #ifdef TEST6
+                  #if defined TEST6 || defined TEST7
                   // Set the flag for further processing
                   too_close = true;
-                  #endif // TEST6
+                  #ifdef TEST7
+                  if (lane > 0) {
+                    lane = 0;
+                  }
+                  #endif // TEST7
+                  #endif // TEST6 or TEST7
                 }
               }
             }
 
-            #ifdef TEST6
+            #if defined TEST6 || defined TEST7
             if (too_close) {
               ref_vel -= 0.224;
             } else if (ref_vel < 49.5) {
               ref_vel += 0.224;
             }
-            #endif // TEST6
-            #endif // TEST5 or TEST6
+            #endif // TEST6 or TEST 7
+            #endif // TEST5 or TEST6 or TEST7
             
             // Create a list of widely spaced (x,y) waypoints, evenly spaced at 30m
             // Will interpolate these waypoints later with a spline and fill it in with more points that control spline
@@ -479,7 +484,7 @@ int main() {
               next_x_vals.push_back(x_point);
               next_y_vals.push_back(y_point);
             }
-            #endif // TEST4 or TEST5 or TEST6
+            #endif // TEST4 or TEST5 or TEST6 or TEST7
 
             msgJson["next_x"] = next_x_vals;
           	msgJson["next_y"] = next_y_vals;
