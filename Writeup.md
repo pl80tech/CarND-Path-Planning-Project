@@ -21,6 +21,7 @@ This is my writeup for the project "Path Planning" of Self Driving Car Nanadegre
 [animation3]: ./output/test3.gif "Animated gif of simulation video (test3)"
 [animation4]: ./output/test4.gif "Animated gif of simulation video (test4)"
 [animation5]: ./output/test5.gif "Animated gif of simulation video (test5)"
+[animation6]: ./output/test6.gif "Animated gif of simulation video (test6)"
 
 ---
 ## About Path Planning Project
@@ -58,6 +59,7 @@ Here are the simulation test videos which were uploaded on Youtube (for easy ref
 | [test3.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test3.mp4) | Moving in a same line | -DTEST3 |[![alt text][animation3]](https://www.youtube.com/watch?v=zmK4KvYfrow)|
 | [test4.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test4.mp4) | Moving in a same line with smoother trajectory| -DTEST4 |[![alt text][animation4]](https://www.youtube.com/watch?v=VZFG87Pr-A4)|
 | [test5.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test5.mp4) | Slowing down the speed when moving close to another car | -DTEST5 |[![alt text][animation5]](https://www.youtube.com/watch?v=_Wxj_l_im1E)|
+| [test6.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test6.mp4) | Speed up and slow down gradually | -DTEST6 |[![alt text][animation6]](https://www.youtube.com/watch?v=r1ohGnhga4E)|
 
 ---
 ## Reference
