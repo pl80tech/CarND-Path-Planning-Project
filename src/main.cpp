@@ -269,7 +269,7 @@ int main() {
               next_x_vals.push_back(car_x+(dist_inc*i)*cos(deg2rad(car_yaw)));
               next_y_vals.push_back(car_y+(dist_inc*i)*sin(deg2rad(car_yaw)));
             }
-            #endif
+            #endif // TEST1
 
             // Test 2 - More complex path - driving the car in a circular path
             #ifdef TEST2
@@ -308,7 +308,7 @@ int main() {
               pos_x += (dist_inc)*cos(angle+(i+1)*(pi()/100));
               pos_y += (dist_inc)*sin(angle+(i+1)*(pi()/100));
             }
-            #endif
+            #endif // TEST2
 
             // Test 3 - Driving the car in a same line along the highway
             #ifdef TEST3
@@ -322,7 +322,7 @@ int main() {
               next_x_vals.push_back(xy[0]);
               next_y_vals.push_back(xy[1]);
             }
-            #endif
+            #endif // TEST3
 
             // Test 4 - Driving the car in a same line with smoother trajectory (using spline)
             // Test 5 - Slowing down the speed when moving close to another car
