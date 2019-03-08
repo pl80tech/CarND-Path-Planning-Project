@@ -379,10 +379,14 @@ int main() {
 
             // Find reference velocity to use
             for (int i = 0; i < sensor_fusion.size(); i++) {
-              // Checking only the cars in the current lane
+              // Get the d information of the car to be checked
               float d = sensor_fusion[i][6];
 
-              if ((d < LANE_WIDTH*lane + LANE_WIDTH) && (d > LANE_WIDTH*lane)) {
+              // Get the lane id of the car to be checked
+              int check_car_lane = getLane(d);
+
+              // Only check the cars in same lane
+              if (isTarget(check_car_lane, lane)) {
                 double vx = sensor_fusion[i][3];
                 double vy = sensor_fusion[i][4];
                 double check_speed = sqrt(vx*vx + vy*vy);
