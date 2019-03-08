@@ -12,13 +12,6 @@
 
 using namespace std;
 
-// Flag to enable debug messages. Comment out to disable.
-#define DEBUG
-
-// Flags to enable test codes. Comment out to disable.
-//#define TEST1
-//#define TEST2
-
 // Define some constants
 #define SAFE_DISTANCE 30 // meter
 #define SPEED_LIMIT 49.50 // mph
