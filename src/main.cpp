@@ -22,6 +22,8 @@ using namespace std;
 // Define some constants
 #define SAFE_DISTANCE 30 // meter
 #define SPEED_LIMIT 49.50 // mph
+#define LANE_WIDTH 4 // meter
+#define LANE_HALF LANE_WIDTH/2 // meter
 
 // for convenience
 using json = nlohmann::json;
@@ -357,7 +359,7 @@ int main() {
               // Checking only the cars in the current lane
               float d = sensor_fusion[i][6];
 
-              if ((d < 2+4*lane+2) && (d > 2+4*lane-2)) {
+              if ((d < LANE_WIDTH*lane + LANE_WIDTH) && (d > LANE_WIDTH*lane)) {
                 double vx = sensor_fusion[i][3];
                 double vy = sensor_fusion[i][4];
                 double check_speed = sqrt(vx*vx + vy*vy);
@@ -440,9 +442,9 @@ int main() {
             }
             
             // In Frenet add evenly 30m spaced points ahead of starting reference
-            vector<double> next_wp0 = getXY(car_s+30, 2+4*lane, map_waypoints_s, map_waypoints_x, map_waypoints_y);
-            vector<double> next_wp1 = getXY(car_s+60, 2+4*lane, map_waypoints_s, map_waypoints_x, map_waypoints_y);
-            vector<double> next_wp2 = getXY(car_s+90, 2+4*lane, map_waypoints_s, map_waypoints_x, map_waypoints_y);
+            vector<double> next_wp0 = getXY(car_s+30, LANE_WIDTH*lane + LANE_HALF, map_waypoints_s, map_waypoints_x, map_waypoints_y);
+            vector<double> next_wp1 = getXY(car_s+60, LANE_WIDTH*lane + LANE_HALF, map_waypoints_s, map_waypoints_x, map_waypoints_y);
+            vector<double> next_wp2 = getXY(car_s+90, LANE_WIDTH*lane + LANE_HALF, map_waypoints_s, map_waypoints_x, map_waypoints_y);
 
             ptsx.push_back(next_wp0[0]);
             ptsx.push_back(next_wp1[0]);
