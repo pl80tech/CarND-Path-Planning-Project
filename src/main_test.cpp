@@ -243,7 +243,11 @@ int main() {
   int lane = 1;
 
   // Reference velocity (mph)
+  #if defined TEST6 || defined TEST7
   double ref_vel = 0.0;
+  #else
+  double ref_vel = SPEED_LIMIT;
+  #endif
 
   h.onMessage([&ref_vel,&map_waypoints_x,&map_waypoints_y,&map_waypoints_s,&map_waypoints_dx,&map_waypoints_dy,&lane](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length,
                      uWS::OpCode opCode) {
@@ -288,9 +292,78 @@ int main() {
           	vector<double> next_y_vals;
 
           	// TODO: define a path made up of (x,y) points that the car will visit sequentially every .02 seconds
+          	// Test 1 - Getting started with simple test moving the car forward at constant velocity
+            #ifdef TEST1
+            double dist_inc = 0.5;
+            for(int i = 0; i < 50; i++)
+            {
+              next_x_vals.push_back(car_x+(dist_inc*i)*cos(deg2rad(car_yaw)));
+              next_y_vals.push_back(car_y+(dist_inc*i)*sin(deg2rad(car_yaw)));
+            }
+            #endif // TEST1
+
+            // Test 2 - More complex path - driving the car in a circular path
+            #ifdef TEST2
+            double pos_x;
+            double pos_y;
+            double angle;
+            int path_size = previous_path_x.size();
+
+            for(int i = 0; i < path_size; i++)
+            {
+              next_x_vals.push_back(previous_path_x[i]);
+              next_y_vals.push_back(previous_path_y[i]);
+            }
+
+            if(path_size == 0)
+            {
+              pos_x = car_x;
+              pos_y = car_y;
+              angle = deg2rad(car_yaw);
+            }
+            else
+            {
+              pos_x = previous_path_x[path_size-1];
+              pos_y = previous_path_y[path_size-1];
+
+              double pos_x2 = previous_path_x[path_size-2];
+              double pos_y2 = previous_path_y[path_size-2];
+              angle = atan2(pos_y-pos_y2,pos_x-pos_x2);
+            }
+
+            double dist_inc = 0.5;
+            for(int i = 0; i < 50-path_size; i++)
+            {    
+              next_x_vals.push_back(pos_x+(dist_inc)*cos(angle+(i+1)*(pi()/100)));
+              next_y_vals.push_back(pos_y+(dist_inc)*sin(angle+(i+1)*(pi()/100)));
+              pos_x += (dist_inc)*cos(angle+(i+1)*(pi()/100));
+              pos_y += (dist_inc)*sin(angle+(i+1)*(pi()/100));
+            }
+            #endif // TEST2
+
+            // Test 3 - Driving the car in a same line along the highway
+            #ifdef TEST3
+            double dist_inc = 0.5;
+            for(int i = 0; i < 50; i++)
+            {
+              double next_s = car_s + (i+1)*dist_inc;
+              double next_d = 6;
+              vector<double> xy = getXY(next_s, next_d, map_waypoints_s, map_waypoints_x, map_waypoints_y);
+              
+              next_x_vals.push_back(xy[0]);
+              next_y_vals.push_back(xy[1]);
+            }
+            #endif // TEST3
+
+            // Test 4 - Driving the car in a same line with smoother trajectory (using spline)
+            // Test 5 - Slowing down the speed when moving close to another car
+            // Test 6 - Speed up and slow down gradually
+            // Test 7 - Change to left lane when detecting a car moving closely ahead
+            #if defined TEST4 || defined TEST5 || defined TEST6 || defined TEST7
             // Get the size of previous path
             int prev_size = previous_path_x.size();
 
+            #if defined TEST5 || defined TEST6 || defined TEST7
             if (prev_size > 0) {
               car_s = end_path_s;
             }
@@ -317,16 +390,26 @@ int main() {
                 // Check whether the s value is in attention range (within 30m)
                 if (isAhead(check_car_s, car_s)) {
                   cout << "There is a car very close. Pay attention !!!" << '\n';
+                  #ifdef TEST5
+                  // Adjust reference velocity to avoid collision
+                  ref_vel = 29.5; // mph
+                  #endif // TEST5
+
+                  #if defined TEST6 || defined TEST7
                   // Set the flag for further processing
                   too_close = true;
+                  #ifdef TEST7
                   if (lane > 0) {
                     cout << "Change to left lane !!!" << '\n';
                     lane = 0;
                   }
+                  #endif // TEST7
+                  #endif // TEST6 or TEST7
                 }
               }
             }
 
+            #if defined TEST6 || defined TEST7
             if (too_close) {
               cout << "Slow down !!!" << '\n';
               ref_vel -= 0.224;
@@ -334,6 +417,8 @@ int main() {
               cout << "Speed up !!!" << '\n';
               ref_vel += 0.224;
             }
+            #endif // TEST6 or TEST 7
+            #endif // TEST5 or TEST6 or TEST7
             
             // Create a list of widely spaced (x,y) waypoints, evenly spaced at 30m
             // Will interpolate these waypoints later with a spline and fill it in with more points that control spline
@@ -440,6 +525,7 @@ int main() {
               next_x_vals.push_back(x_point);
               next_y_vals.push_back(y_point);
             }
+            #endif // TEST4 or TEST5 or TEST6 or TEST7
 
             msgJson["next_x"] = next_x_vals;
           	msgJson["next_y"] = next_y_vals;
