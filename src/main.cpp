@@ -177,9 +177,32 @@ vector<double> getXY(double s, double d, const vector<double> &maps_s, const vec
 
 }
 
+// Get lane of other car from d information
+int getLane(double d) {
+  return ceil(d/LANE_WIDTH) - 1;
+}
+
 // Check whether other car is moving ahead in close range or not
 bool isAhead(double check_car_s, double car_s) {
   if (check_car_s > car_s && (check_car_s - car_s) < SAFE_DISTANCE) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// Check whether other car is in safe zone or not
+bool isSafe(double check_car_s, double car_s) {
+  if (isAhead(check_car_s, car_s) || isAhead(car_s, check_car_s)) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+// Check whether other car is a target for further checking
+bool isTarget(int check_car_lane, int current_lane) {
+  if (check_car_lane == current_lane) {
     return true;
   } else {
     return false;
