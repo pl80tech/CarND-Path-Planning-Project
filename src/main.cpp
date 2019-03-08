@@ -19,6 +19,8 @@ using namespace std;
 //#define TEST1
 //#define TEST2
 
+#define SAFE_DISTANCE 30 // meter
+
 // for convenience
 using json = nlohmann::json;
 
@@ -169,6 +171,15 @@ vector<double> getXY(double s, double d, const vector<double> &maps_s, const vec
 
 	return {x,y};
 
+}
+
+// Check whether other car is moving ahead in close range or not
+bool isAhead(double check_car_s, double car_s) {
+  if (check_car_s > car_s && (check_car_s - car_s) < SAFE_DISTANCE) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 int main() {
@@ -353,7 +364,7 @@ int main() {
                 // Project out s value using previous points
                 check_car_s += ((double)prev_size*.02*check_speed);
                 // Check whether the s value is in attention range (within 30m)
-                if ((check_car_s > car_s) && (check_car_s-car_s < 30)) {
+                if (isAhead(check_car_s, car_s)) {
                   cout << "There is a car very close. Pay attention !!!" << '\n';
                   #ifdef TEST5
                   // Adjust reference velocity to avoid collision
