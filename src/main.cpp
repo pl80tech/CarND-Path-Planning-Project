@@ -19,7 +19,9 @@ using namespace std;
 //#define TEST1
 //#define TEST2
 
+// Define some constants
 #define SAFE_DISTANCE 30 // meter
+#define SPEED_LIMIT 49.50 // mph
 
 // for convenience
 using json = nlohmann::json;
@@ -226,7 +228,7 @@ int main() {
   #if defined TEST6 || defined TEST7
     double ref_vel = 0.0;
   #else
-    double ref_vel = 49.5;
+    double ref_vel = SPEED_LIMIT;
   #endif
 
   h.onMessage([&ref_vel,&map_waypoints_x,&map_waypoints_y,&map_waypoints_s,&map_waypoints_dx,&map_waypoints_dy,&lane](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length,
@@ -389,7 +391,7 @@ int main() {
             if (too_close) {
               cout << "Slow down !!!" << '\n';
               ref_vel -= 0.224;
-            } else if (ref_vel < 49.5) {
+            } else if (ref_vel < SPEED_LIMIT) {
               cout << "Speed up !!!" << '\n';
               ref_vel += 0.224;
             }
