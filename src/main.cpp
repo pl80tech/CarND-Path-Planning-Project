@@ -320,9 +320,9 @@ int main() {
                 // Project out s value using previous points
                 check_car_s += ((double)prev_size*.02*check_speed);
                 // Check whether the s value is in attention range (within 30m)
-                if (isAhead(check_car_s, car_s)) {
-                  cout << "There is a car very close ahead. Pay attention !!!" << '\n';
-                  // Set the flag for further processing
+                if (isAhead(check_car_s, car_s) && (lane == check_car_lane)) {
+                  cout << "There is a car moving closely ahead. Need some actions !!!" << '\n';
+                  // Set the flag showing there is a car moving closely ahead (within 30m)
                   isCarAhead = true;
                   if (lane > 0) {
                     cout << "Change to left lane !!!" << '\n';
