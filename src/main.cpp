@@ -194,8 +194,11 @@ bool isSafe(double check_car_s, double car_s) {
 }
 
 // Check whether other car is a target for further checking
+// Only check the cars on same lane or adjacent lane. Ignore the cars on far lane.
 bool isTarget(int check_car_lane, int current_lane) {
-  if (check_car_lane == current_lane) {
+  if (check_car_lane < 0) {
+    return false;
+  } else if (abs(check_car_lane-current_lane) < 2) {
     return true;
   } else {
     return false;
