@@ -324,10 +324,6 @@ int main() {
                   cout << "There is a car moving closely ahead. Need some actions !!!" << '\n';
                   // Set the flag showing there is a car moving closely ahead (within 30m)
                   isCarAhead = true;
-                  if (lane > 0) {
-                    cout << "Change to left lane !!!" << '\n';
-                    lane = 0;
-                  }
                 }
 
                 // Check whether other cars are in safe zone then set the flags for left & right car
@@ -345,8 +341,19 @@ int main() {
             }
 
             if (isCarAhead) {
-              cout << "Slow down !!!" << '\n';
-              ref_vel -= 0.224;
+              if (!isCarLeft && lane > 0) {
+                // When there is no car moving in close range on left lane
+                cout << "Change to left lane" << '\n';
+                lane -= 1;
+              } else if (!isCarRight && lane < 2) {
+                // When there is no car moving in close range on right lane
+                cout << "Change to right lane" << '\n';
+                lane += 1;
+              } else {
+                // Keep current lane
+                cout << "Slow down !!!" << '\n';
+                ref_vel -= 0.224;
+              }
             } else if (ref_vel < SPEED_LIMIT) {
               cout << "Speed up !!!" << '\n';
               ref_vel += 0.224;
