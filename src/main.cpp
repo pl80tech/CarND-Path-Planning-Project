@@ -295,7 +295,7 @@ int main() {
               car_s = end_path_s;
             }
 
-            bool too_close = false;
+            bool isCarAhead = false;
 
             // Find reference velocity to use
             for (int i = 0; i < sensor_fusion.size(); i++) {
@@ -316,9 +316,9 @@ int main() {
                 check_car_s += ((double)prev_size*.02*check_speed);
                 // Check whether the s value is in attention range (within 30m)
                 if (isAhead(check_car_s, car_s)) {
-                  cout << "There is a car very close. Pay attention !!!" << '\n';
+                  cout << "There is a car very close ahead. Pay attention !!!" << '\n';
                   // Set the flag for further processing
-                  too_close = true;
+                  isCarAhead = true;
                   if (lane > 0) {
                     cout << "Change to left lane !!!" << '\n';
                     lane = 0;
@@ -327,7 +327,7 @@ int main() {
               }
             }
 
-            if (too_close) {
+            if (isCarAhead) {
               cout << "Slow down !!!" << '\n';
               ref_vel -= 0.224;
             } else if (ref_vel < SPEED_LIMIT) {
