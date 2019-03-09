@@ -24,6 +24,9 @@ This is my writeup for the project "Path Planning" of Self Driving Car Nanadegre
 [animation6]: ./output/test6.gif "Animated gif of simulation video (test6)"
 [animation7]: ./output/test7.gif "Animated gif of simulation video (test7)"
 
+[final_short]: ./output/final_short.gif "Animated gif of final output video (short version)"
+[final_long]: ./output/final_long.gif "Animated gif of final output video (long version)"
+
 ---
 ## About Path Planning Project
 
