@@ -321,7 +321,6 @@ int main() {
                 check_car_s += ((double)prev_size*.02*check_speed);
                 // Check whether the s value is in attention range (within 30m)
                 if (isAhead(check_car_s, car_s) && (lane == check_car_lane)) {
-                  cout << "There is a car moving closely ahead. Need some actions !!!" << '\n';
                   // Set the flag showing there is a car moving closely ahead (within 30m)
                   isCarAhead = true;
                 }
@@ -341,6 +340,7 @@ int main() {
             }
 
             if (isCarAhead) {
+              cout << "There is a car moving closely ahead. Need some actions !!!" << '\n';
               if (!isCarLeft && lane > 0) {
                 // When there is no car moving in close range on left lane
                 cout << "Change to left lane" << '\n';
