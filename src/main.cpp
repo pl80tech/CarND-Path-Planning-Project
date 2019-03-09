@@ -340,22 +340,22 @@ int main() {
             }
 
             if (isCarAhead) {
-              cout << "There is a car moving closely ahead. Need some actions !!!" << '\n';
+              cout << "There is a car moving closely ahead --> Need some actions !!!" << '\n';
               if (!isCarLeft && lane > 0) {
                 // When there is no car moving in close range on left lane
-                cout << "Change to left lane" << '\n';
+                cout << "No car moving on the left --> Change to left lane" << '\n';
                 lane -= 1;
               } else if (!isCarRight && lane < 2) {
                 // When there is no car moving in close range on right lane
-                cout << "Change to right lane" << '\n';
+                cout << "No car moving on the right --> Change to right lane" << '\n';
                 lane += 1;
               } else {
                 // Keep current lane
-                cout << "Slow down !!!" << '\n';
+                cout << "Some cars moving in close range on adjacent lanes --> Keep lane and slow down " << '\n';
                 ref_vel -= 0.224;
               }
             } else if (ref_vel < SPEED_LIMIT) {
-              cout << "Speed up !!!" << '\n';
+              cout << "No car moving ahead --> Keep lane and speed up" << '\n';
               ref_vel += 0.224;
             }
             
