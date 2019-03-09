@@ -302,6 +302,9 @@ int main() {
             bool isCarLeft = false;
             bool isCarRight = false;
 
+            // Speed of the car moving ahead
+            double ahead_car_speed = 0;
+
             // Find reference velocity to use
             for (int i = 0; i < sensor_fusion.size(); i++) {
               // Get the d information of the car to be checked
@@ -323,6 +326,7 @@ int main() {
                 if (isAhead(check_car_s, car_s) && (lane == check_car_lane)) {
                   // Set the flag showing there is a car moving closely ahead (within 30m)
                   isCarAhead = true;
+                  ahead_car_speed = check_speed;
                 }
 
                 // Check whether other cars are in close range (within 30m) then set the flags for left & right car
@@ -351,8 +355,11 @@ int main() {
                 lane += 1;
               } else {
                 // Keep current lane
-                cout << "Some cars moving in close range on adjacent lanes --> Keep lane and slow down " << '\n';
-                ref_vel -= 0.224;
+                cout << "Some cars moving in close range on adjacent lanes --> Keep lane" << '\n';
+                if (ref_vel > ahead_car_speed) {
+                  cout << "The car ahead is moving slow. Slow down" << '\n';
+                  ref_vel -= 0.224;
+                }
               }
             } else if (ref_vel < SPEED_LIMIT) {
               cout << "No car moving ahead --> Keep lane and speed up" << '\n';
