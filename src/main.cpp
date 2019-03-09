@@ -187,9 +187,9 @@ bool isAhead(double check_car_s, double car_s) {
 // Check whether other car is in close range or not
 bool isClose(double check_car_s, double car_s) {
   if (isAhead(check_car_s, car_s) || isAhead(car_s, check_car_s)) {
-    return false;
-  } else {
     return true;
+  } else {
+    return false;
   }
 }
 
