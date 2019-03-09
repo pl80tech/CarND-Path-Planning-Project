@@ -184,8 +184,8 @@ bool isAhead(double check_car_s, double car_s) {
   }
 }
 
-// Check whether other car is in safe zone or not
-bool isSafe(double check_car_s, double car_s) {
+// Check whether other car is in close range or not
+bool isClose(double check_car_s, double car_s) {
   if (isAhead(check_car_s, car_s) || isAhead(car_s, check_car_s)) {
     return false;
   } else {
@@ -325,14 +325,14 @@ int main() {
                   isCarAhead = true;
                 }
 
-                // Check whether other cars are in safe zone then set the flags for left & right car
-                if (!isSafe(check_car_s, car_s)) {
+                // Check whether other cars are in close range (within 30m) then set the flags for left & right car
+                if (isClose(check_car_s, car_s)) {
                   if (lane - check_car_lane == 1) {
-                    // Set the flag showing there is a car on left lane and close range (within 30m)
+                    // Set the flag showing there is a car on left lane and close range
                     isCarLeft = true;
                   }
                   if (check_car_lane - lane == 1) {
-                    // Set the flag showing there is a car on right lane and close range (within 30m)
+                    // Set the flag showing there is a car on right lane and close range
                     isCarRight = true;
                   }
                 }
