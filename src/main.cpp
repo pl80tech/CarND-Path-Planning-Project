@@ -296,6 +296,8 @@ int main() {
             }
 
             bool isCarAhead = false;
+            bool isCarLeft = false;
+            bool isCarRight = false;
 
             // Find reference velocity to use
             for (int i = 0; i < sensor_fusion.size(); i++) {
@@ -322,6 +324,18 @@ int main() {
                   if (lane > 0) {
                     cout << "Change to left lane !!!" << '\n';
                     lane = 0;
+                  }
+                }
+
+                // Check whether other cars are in safe zone then set the flags for left & right car
+                if (!isSafe(check_car_s, car_s)) {
+                  if (lane - check_car_lane == 1) {
+                    // Set the flag showing there is a car on left lane and close range (within 30m)
+                    isCarLeft = true;
+                  }
+                  if (check_car_lane - lane == 1) {
+                    // Set the flag showing there is a car on right lane and close range (within 30m)
+                    isCarRight = true;
                   }
                 }
               }
