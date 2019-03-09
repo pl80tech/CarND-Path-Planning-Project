@@ -28,6 +28,9 @@ This is my writeup for the project "Path Planning" of Self Driving Car Nanadegre
 
 [final_short]: ./output/final_short.gif "Animated gif of final output video (short version)"
 [final_long]: ./output/final_long.gif "Animated gif of final output video (long version)"
+[final_left]: ./output/final_ChangeLeft.gif "Animated gif of final output video (change left)"
+[final_slow]: ./output/final_SlowDown.gif "Animated gif of final output video (slow down)"
+[final_right]: ./output/final_ChangeRight.gif "Animated gif of final output video (change right)"
 
 ---
 ## About Path Planning Project
