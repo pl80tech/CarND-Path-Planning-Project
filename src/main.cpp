@@ -298,6 +298,7 @@ int main() {
               car_s = end_path_s;
             }
 
+            // Some flags to control the lane
             bool isCarAhead = false;
             bool isCarLeft = false;
             bool isCarRight = false;
