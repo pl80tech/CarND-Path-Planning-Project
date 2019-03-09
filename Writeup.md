@@ -65,6 +65,10 @@ Here are the [Rubric Points](https://review.udacity.com/#!/rubrics/1971/view) wh
 |:--------------------------:|:--------------------------:|
 | [![alt text][final_short]](https://www.youtube.com/watch?v=LEVu-Uy5Nb0) | [![alt text][final_long]](https://www.youtube.com/watch?v=01b2ZkRlezk) |
 
+| Change left             | Keep lane and slow down | Change right             |
+|:-----------------------:|:-----------------------:|:------------------------:|
+| ![alt text][final_left] | ![alt text][final_slow] | ![alt text][final_right] |
+
 ### Simulation test
 
 Here are the simulation test videos which were uploaded on Youtube (for easy reference). Click on the thumbnail image to jump to the video on Youtube.
