@@ -12,6 +12,8 @@ This is my writeup for the project "Path Planning" of Self Driving Car Nanadegre
 * [Project code](#Project-code)
 * [Rubric Points](#Rubric-Points)
 * [Output video](#Output-video)
+	* [Final output](#Final-output)
+	* [Simulation test](#Simulation-test)
 * [Reference](#Reference)
 
 [//]: # (Image References)
@@ -53,6 +55,14 @@ Here are the [Rubric Points](https://review.udacity.com/#!/rubrics/1971/view) wh
 
 ---
 ## Output video
+
+### Final output
+
+| Short version              | Long version               |
+|:--------------------------:|:--------------------------:|
+| [![alt text][final_short]](https://www.youtube.com/watch?v=LEVu-Uy5Nb0) | [![alt text][final_long]](https://www.youtube.com/watch?v=01b2ZkRlezk) |
+
+### Simulation test
 
 Here are the simulation test videos which were uploaded on Youtube (for easy reference). Click on the thumbnail image to jump to the video on Youtube.
 
