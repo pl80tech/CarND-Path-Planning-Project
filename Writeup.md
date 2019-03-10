@@ -75,7 +75,7 @@ Here are some animated images from final output video showing the behavior of th
 
 ### Simulation test
 
-Here are the simulation test videos which were uploaded on Youtube (for easy reference). Click on the thumbnail image to jump to the video on Youtube.
+Here are the simulation videos of some tests which are implemented under correspondent compile flags (TEST1 ~ TEST7). Click on the thumbnail image to jump to the video on Youtube.
 
 | Filename | Content | Compile flag | Link on Youtube |
 |:--------:|:-------:|:------------:|:---------------:|
