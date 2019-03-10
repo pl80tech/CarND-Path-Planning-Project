@@ -61,9 +61,13 @@ Here are the [Rubric Points](https://review.udacity.com/#!/rubrics/1971/view) wh
 
 ### Final output
 
-| Short version              | Long version               |
+Here are the final output videos uploaded on Youtube for easy reference. Click on the thumbnail image to jump to the video on Youtube.
+
+| Short version (4.47 miles) | Long version (7.13 miles)  |
 |:--------------------------:|:--------------------------:|
 | [![alt text][final_short]](https://www.youtube.com/watch?v=LEVu-Uy5Nb0) | [![alt text][final_long]](https://www.youtube.com/watch?v=01b2ZkRlezk) |
+
+Here are some animated images from final output video showing the behavior of the car when keeping or changing lane.
 
 | Change left             | Keep lane and slow down | Change right             |
 |:-----------------------:|:-----------------------:|:------------------------:|
