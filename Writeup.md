@@ -64,6 +64,42 @@ Here are the [Rubric Points](https://review.udacity.com/#!/rubrics/1971/view) wh
 ---
 ## Code compilation
 
+The final solution is implemented in [/src/main.cpp](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/src/main.cpp) and it can be compiled successfully with **cmake** and **make** (as explained in [README](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/README.md)).
+
+```shell
+$ cmake ..
+-- The C compiler identification is GNU 5.4.0
+-- The CXX compiler identification is GNU 5.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+
+$ make
+Scanning dependencies of target path_planning
+[ 50%] Building CXX object CMakeFiles/path_planning.dir/src/main.cpp.o
+[100%] Linking CXX executable path_planning
+[100%] Built target path_planning
+```
+
+Some tests (test1 ~ test7) are implemented in [main_test.cpp](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/src/main_test.cpp) with correspondent compile definition **-DTEST1** ~ **-DTEST7**. It can be compile by adding the definition and specifying the target source code in [CMakeLists.txt](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/CMakeLists.txt) as below:
+
+```cmake
+add_definitions(-DTEST1)
+
+set(sources src/main_test.cpp)
+```
+
 ---
 ## Valid Trajectories
 
