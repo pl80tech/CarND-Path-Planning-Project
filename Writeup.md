@@ -11,6 +11,11 @@ This is my writeup for the project "Path Planning" of Self Driving Car Nanadegre
 * [About Path Planning Project](#About-Path-Planning-Project)
 * [Project code](#Project-code)
 * [Rubric Points](#Rubric-Points)
+* [Code compilation](#Code-compilation)
+* [Valid Trajectories](#Valid-Trajectories)
+* [Reflection](#Reflection)
+	* [Path generation and planning](#Path-generation-and-planning)
+	* [Further improvement](#Further-improvement)
 * [Output video](#Output-video)
 	* [Final output](#Final-output)
 	* [Simulation test](#Simulation-test)
@@ -54,7 +59,20 @@ https://github.com/udacity/CarND-Path-Planning-Project.git
 ---
 ## Rubric Points
 
-Here are the [Rubric Points](https://review.udacity.com/#!/rubrics/1971/view) which need to be addressed to meet the requirements of this project.
+Here are the [Rubric Points](https://review.udacity.com/#!/rubrics/1971/view) which need to be addressed to meet the requirements of this project. Each point/criteria is explained in next sections.
+
+---
+## Code compilation
+
+---
+## Valid Trajectories
+
+---
+## Reflection
+
+## Path generation and planning
+
+## Further improvement
 
 ---
 ## Output video
