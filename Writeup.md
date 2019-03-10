@@ -144,7 +144,7 @@ Here are some ideas which may help to improve the performance of current solutio
 
 Here are the final output videos uploaded on Youtube for easy reference. Click on the thumbnail image to jump to the video on Youtube.
 
-| Short version (4.47 miles) | Long version (7.13 miles)  |
+| [Short version](https://drive.google.com/open?id=1jxRWFcxBBjQk0v3BHh-obfSjYeunmjJZ) (4.47 miles) | [Long version](https://drive.google.com/open?id=1f8PO1-CLHWBGUC5TcWsCpG6K8amXM0e7) (7.13 miles)  |
 |:--------------------------:|:--------------------------:|
 | [![alt text][final_short]](https://www.youtube.com/watch?v=LEVu-Uy5Nb0) | [![alt text][final_long]](https://www.youtube.com/watch?v=01b2ZkRlezk) |
 
