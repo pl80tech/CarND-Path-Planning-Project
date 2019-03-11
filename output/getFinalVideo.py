@@ -1,3 +1,9 @@
+# Script to download final output videos (big size) from Google Drive
+#
+# How to use:
+# $python getFinalVideo.py short --> download short version
+# $python getFinalVideo.py long  --> download long version
+#
 import sys
 import subprocess
 
