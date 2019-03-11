@@ -142,7 +142,7 @@ Here are some ideas which may help to improve the performance of current solutio
 
 ### Final output
 
-Here are the final output videos uploaded on Youtube for easy reference. Click on the thumbnail image to jump to the video on Youtube.
+Here are the final output videos uploaded on Youtube for easy reference. Click on the thumbnail image to jump to the video on Youtube. Click on the hyperlink to download the video from Google Drive (big size).
 
 | [Short version](https://drive.google.com/open?id=1jxRWFcxBBjQk0v3BHh-obfSjYeunmjJZ) (4.47 miles) | [Long version](https://drive.google.com/open?id=1f8PO1-CLHWBGUC5TcWsCpG6K8amXM0e7) (7.13 miles)  |
 |:--------------------------:|:--------------------------:|
