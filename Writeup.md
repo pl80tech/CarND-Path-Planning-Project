@@ -100,6 +100,13 @@ add_definitions(-DTEST1)
 set(sources src/main_test.cpp)
 ```
 
+After adding the compile options in [CMakeLists.txt](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/CMakeLists.txt) (by [following commit](https://github.com/pl80tech/CarND-Path-Planning-Project/commit/585c4093a5cd2af960f1264786ccf061c413dedb)), each test can be enabled by simply specifying the option when running cmake as below:
+
+```shell
+$ cmake -DTEST1=ON ..
+$ make
+```
+
 ---
 ## Valid Trajectories
 
