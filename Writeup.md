@@ -21,6 +21,7 @@ This is my writeup for the project "Path Planning" of Self Driving Car Nanadegre
 * [Output video](#Output-video)
 	* [Final output](#Final-output)
 	* [Simulation test](#Simulation-test)
+* [Test code](#Test-code)
 * [Reference](#Reference)
 
 [//]: # (Image References)
@@ -176,6 +177,11 @@ Here are the simulation videos of some tests which are implemented under corresp
 | [test5.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test5.mp4) | Slowing down the speed when moving close to another car | -DTEST5 |[![alt text][animation5]](https://www.youtube.com/watch?v=_Wxj_l_im1E) |
 | [test6.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test6.mp4) | Speed up and slow down gradually | -DTEST6 |[![alt text][animation6]](https://www.youtube.com/watch?v=r1ohGnhga4E) |
 | [test7.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test7.mp4) | Change to left lane when detecting a car moving closely ahead | -DTEST7 |[![alt text][animation7]](https://www.youtube.com/watch?v=t18hE0zdOm4)|
+
+---
+## Test code
+
+Folder [/test_code/](https://github.com/pl80tech/CarND-Path-Planning-Project/tree/master/test_code) includes the code (Jupyter notebook, C++) for the quiz on lesson 8 ~ 11. Refer to the description on [runtest.sh](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/test_code/runtest.sh) about how to compile and run the C++ code.
 
 ---
 ## Reference
