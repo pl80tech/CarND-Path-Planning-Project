@@ -170,14 +170,13 @@ Here are the simulation videos of some tests which are implemented under corresp
 
 | Filename | Content | Compile definition | Link on Youtube |
 |:--------:|:-------:|:------------------:|:---------------:|
-| [test1.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test1.mp4) | Moving straight at constant velocity | -DTEST1 |[![alt text][animation1]](https://www.youtube.com/watch?v=_qdQqQSLnUI) |
-| [test2.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test2.mp4) | Moving in a circle | -DTEST2 |[![alt text][animation2]](https://www.youtube.com/watch?v=qh-NQ2_cI1c)|
-| [test3.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test3.mp4) | Moving in a same line | -DTEST3 |[![alt text][animation3]](https://www.youtube.com/watch?v=zmK4KvYfrow)|
-| [test4.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test4.mp4) | Moving in a same line with smoother trajectory| -DTEST4 |[![alt text][animation4]](https://www.youtube.com/watch?v=VZFG87Pr-A4) |
-| [test5.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test5.mp4) | Slowing down the speed when moving close to another car | -DTEST5 |[![alt text][animation5]](https://www.youtube.com/watch?v=_Wxj_l_im1E) |
-| [test6.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test6.mp4) | Speed up and slow down gradually | -DTEST6 |[![alt text][animation6]](https://www.youtube.com/watch?v=r1ohGnhga4E) |
-| [test7.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test7.mp4) | Change to left lane when detecting a car moving closely ahead | -DTEST7 |[![alt text][animation7]](https://www.youtube.com/watch?v=t18hE0zdOm4)|
-
+| [test1.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test1.mp4) | Moving straight at constant velocity | -DTEST1 | [![alt text][animation1]](https://www.youtube.com/watch?v=_qdQqQSLnUI) |
+| [test2.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test2.mp4) | Moving in a circle | -DTEST2 | [![alt text][animation2]](https://www.youtube.com/watch?v=qh-NQ2_cI1c) |
+| [test3.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test3.mp4) | Moving in a same line | -DTEST3 | [![alt text][animation3]](https://www.youtube.com/watch?v=zmK4KvYfrow) |
+| [test4.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test4.mp4) | Moving in a same line with smoother trajectory| -DTEST4 | [![alt text][animation4]](https://www.youtube.com/watch?v=VZFG87Pr-A4) |
+| [test5.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test5.mp4) | Slowing down the speed when moving close to another car | -DTEST5 | [![alt text][animation5]](https://www.youtube.com/watch?v=_Wxj_l_im1E) |
+| [test6.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test6.mp4) | Speed up and slow down gradually | -DTEST6 | [![alt text][animation6]](https://www.youtube.com/watch?v=r1ohGnhga4E) |
+| [test7.mp4](https://github.com/pl80tech/CarND-Path-Planning-Project/blob/master/output/test7.mp4) | Change to left lane when detecting a car moving closely ahead | -DTEST7 | [![alt text][animation7]](https://www.youtube.com/watch?v=t18hE0zdOm4)|
 ---
 ## Test code
 
